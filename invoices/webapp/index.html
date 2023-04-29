@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>SAPUI5 desde cero</title>
+    </head>
+
+    <script id="sap-ui-bootstrap"
+            src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_horizon"
+            data-sap-ui-resourceroots='{
+                "invoices": "./"
+            }'
+            data-sap-ui-compatVersion="edge"
+            data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"
+            data-sap-ui-async="true">
+
+    </script>
+
+    <body id="content" class="sapUiBody">
+        <div
+            data-sap-ui-component   data-name="invoices"
+                                    data-id="container"
+                                    data-set-settings='{"id":"invoices"}'></div>
+    </body>
+
+</html>
