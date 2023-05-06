@@ -25,7 +25,6 @@ function (Controller, MessageToast, MessageBox, JSONModel, Model, ResourceModel)
             
             MessageToast.show(oBundle.getText("helloMsg",[sMessage]));
             //MessageBox.alert(sMessage);
-
         }
 
     });
