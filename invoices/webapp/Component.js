@@ -1,8 +1,8 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
     "invoices/model/Model",
-    "sap/ui/model/resource/ResourceModel"
-],function (UIComponent, Model, ResourceModel) {
+    "invoices/controller/HelloDialog"
+],function (UIComponent, Model, HelloDialog) {
 
     "use strict";
 
@@ -18,12 +18,17 @@ sap.ui.define([
 
             this.setModel(Model.createRecipient());
 
-            let oI18n = new ResourceModel({
-                bundleName: "invoices.i18n.i18n"
-            });
+            // open dialog
+            this._helloDialog = new HelloDialog(this.getRootControl());
+        },
 
-            this.setModel(oI18n, "i18n");
+        exit: function () {
+            this._helloDialog.destroy();
+            delete this._helloDialog();
+        },
 
+        onOpenHelloDialog: function () {
+            this._helloDialog.open();
         }
 
     });

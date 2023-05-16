@@ -11,6 +11,8 @@ sap.ui.define([
                 recipient: {
                     name: "Jorge"
                 }
+
+                //     /recipient/name
             };
             let oModel = new JSONModel(oData);
             return oModel;

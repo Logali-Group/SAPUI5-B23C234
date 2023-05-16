@@ -1,0 +1,29 @@
+<mvc:View
+	controllerName="invoices.controller.HelloPanel"
+	xmlns="sap.m"
+        xmlns:core="sap.ui.core"
+        xmlns:mvc="sap.ui.core.mvc">
+
+        <Panel  headerText="{i18n>helloPanel}" 
+                class="sapUiResponsiveMargin" 
+                expandable="true" 
+                expanded="true">
+                <Button text="{i18n>helloDialogBut}"
+                        icon="sap-icon://action"
+                        press="onOpenDialog"
+                        class="sapUiSmallMarginEnd"/>
+                <Button class="sapUiSmallMarginEnd"  
+                        text="{i18n>showHelloButtonText}"  
+                        press="onShowHello"/>
+                <Input  class="sapUiSmallMarginEnd"  
+                        value="{/recipient/name}"
+                        valueLiveUpdate="true"
+                        width="60%"/>
+                <Text text="{i18n>hello} {/recipient/name}"
+                        class="sapUiSmallMargin boldElements sapthemeHighlight-asColor"/>
+        </Panel>
+
+        <core:Fragment fragmentName="invoices.fragment.Form01" 
+                        type="XML"/>
+
+</mvc:View>
