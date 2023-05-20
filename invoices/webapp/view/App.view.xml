@@ -23,6 +23,8 @@
 
                                                 <mvc:XMLView    viewName="invoices.view.HelloPanel" 
                                                                 type="XML"/>
+                                                <mvc:XMLView    viewName="invoices.view.InvoicesList"
+                                                                type="XML"/>
                                         
                                         </content>
 
