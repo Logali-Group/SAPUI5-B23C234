@@ -6,7 +6,7 @@
         <List   id="invoiceList"
                 headerText="{i18n>invoiceListTitle}"
                 class="sapUiResponsiveMargin"
-                items="{invoices>/Invoices}"
+                items="{northwind>/Invoices}"
                 width="auto">
             
             <headerToolbar>
@@ -18,11 +18,11 @@
             </headerToolbar>
 
             <items>
-                <ObjectListItem title="{invoices>Quantity} x {invoices>ProductName}"
+                <ObjectListItem title="{northwind>Quantity} x {northwind>ProductName}"
                                 number="{
                                     parts:[
                                         {
-                                            path:'invoices>ExtendedPrice'
+                                            path:'northwind>ExtendedPrice'
                                         },
                                         {
                                             path:'currency>/usd'
@@ -36,20 +36,20 @@
                                     }
                                 }"
                                 numberUnit="{currency>/usd}"
-                                numberState="{= ${invoices>ExtendedPrice} > 50 ? 'Success' : 'Error'}">
+                                numberState="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}">
 
                         <firstStatus>
-
-                            <ObjectStatus text="{
+                            <ObjectStatus text="{northwind>ShipperName}"/>
+                            <!-- <ObjectStatus text="{
                                 path:'invoices>Status',
                                 formatter:'.formatter.invoicesStatus'
-                            }"/>
+                            }"/> -->
 
                         </firstStatus>
 
-                        <secondStatus>
+                        <!-- <secondStatus>
                             <ObjectStatus text="{invoices>ShipperName}"/>
-                        </secondStatus>
+                        </secondStatus> -->
 
                 </ObjectListItem>
             </items>
