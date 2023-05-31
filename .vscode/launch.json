@@ -1,84 +1,84 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Start invoices",
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npx",
-            "cwd": "${workspaceFolder}/invoices",
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            },
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "args": [
-                "--open",
-                "index.html"
-            ],
-            "console": "internalConsole",
-            "internalConsoleOptions": "openOnSessionStart",
-            "outputCapture": "std",
-            "port": 9229,
-            "env": {
-                "DEBUG": "--inspect",
-                "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/invoices/invoices\"}"
-            }
-        },
-        {
-            "name": "Mock Server",
-            "cwd": "${workspaceFolder}/invoices",
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npx",
-            "args": [
-                "--open",
-                "test/mockServer.html"
-            ],
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            },
-            "console": "internalConsole",
-            "internalConsoleOptions": "openOnSessionStart",
-            "outputCapture": "std",
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/invoices/invoices\"}",
-                "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/v2\",\"url\":\"https://services.odata.org\",\"destination\":\"Northwind\"}]",
-                "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
-            }
-        },
-        {
-            "name": "QUnit",
-            "cwd": "${workspaceFolder}/invoices",
-            "runtimeArgs": [
-                "fiori",
-                "run"
-            ],
-            "type": "node",
-            "request": "launch",
-            "runtimeExecutable": "npx",
-            "args": [
-                "--open",
-                "test/unit/unitTests.qunit.html"
-            ],
-            "windows": {
-                "runtimeExecutable": "npx.cmd"
-            },
-            "console": "internalConsole",
-            "internalConsoleOptions": "openOnSessionStart",
-            "outputCapture": "std",
-            "env": {
-                "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/invoices/invoices\"}",
-                "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/v2\",\"url\":\"https://services.odata.org\",\"destination\":\"Northwind\"}]",
-                "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
-            }
-        }
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Start invoices",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "cwd": "${workspaceFolder}/invoices",
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "args": [
+        "--open",
+        "index.html"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "port": 9229,
+      "env": {
+        "DEBUG": "--inspect",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false",
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/invoices/invoices\"}"
+      }
+    },
+    {
+      "name": "Mock Server",
+      "cwd": "${workspaceFolder}/invoices",
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "args": [
+        "--open",
+        "test/mockServer.html"
+      ],
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/invoices/invoices\"}",
+        "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/v2\",\"url\":\"https://services.odata.org\",\"destination\":\"Northwind\"}]",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+      }
+    },
+    {
+      "name": "QUnit",
+      "cwd": "${workspaceFolder}/invoices",
+      "runtimeArgs": [
+        "fiori",
+        "run"
+      ],
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "args": [
+        "--open",
+        "test/unit/unitTests.qunit.html"
+      ],
+      "windows": {
+        "runtimeExecutable": "npx.cmd"
+      },
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "outputCapture": "std",
+      "env": {
+        "run.config": "{\"handlerId\":\"fiori_tools\",\"runnableId\":\"/home/user/projects/invoices/invoices\"}",
+        "FIORI_TOOLS_BACKEND_CONFIG": "[{\"path\":\"/v2\",\"url\":\"https://services.odata.org\",\"destination\":\"Northwind\"}]",
+        "FIORI_TOOLS_URL_PARAMS": "sap-ui-xx-viewCache=false"
+      }
+    }
+  ]
 }
