@@ -1,0 +1,21 @@
+<mvc:View
+	controllerName="invoices.controller.Details"
+    xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+
+    <Page title="{i18n>detailsPageTitle}">
+        <ObjectHeader title="{northwind>Quantity} x {northwind>ProductName}">
+            <attributes>
+                <ObjectAttribute text="{northwind>ShipName}" />
+                <ObjectAttribute text="{northwind>ShipAddress}" />
+                <ObjectAttribute text="{northwind>ShipCity}" />
+                <ObjectAttribute text="{northwind>ShipRegion}" />
+                <ObjectAttribute text="{northwind>ShipPostalCode}" />
+                <ObjectAttribute text="{northwind>ShipCountry}" />
+                <ObjectAttribute text="{northwind>CustomerID}" />
+                <ObjectAttribute text="{northwind>CustomerName}" />
+            </attributes>
+        </ObjectHeader>
+    </Page>
+
+</mvc:View>

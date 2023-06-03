@@ -18,13 +18,15 @@ sap.ui.define([
 
             this.setModel(Model.createRecipient());
 
+            this.getRouter().initialize();
+
             // open dialog
             this._helloDialog = new HelloDialog(this.getRootControl());
         },
 
         exit: function () {
             this._helloDialog.destroy();
-            delete this._helloDialog();
+            delete this._helloDialog;
         },
 
         onOpenHelloDialog: function () {

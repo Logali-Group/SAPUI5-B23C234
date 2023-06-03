@@ -27,7 +27,6 @@ sap.ui.define([
                         oMainDataSource = oManifestModel.getProperty("/sap.app/dataSources/northwind"),
                         sMetadaUrl = sap.ui.require.toUrl(_sAppPath + oMainDataSource.settings.localUri),
                         sMockServerUrl = oMainDataSource.uri && new URI(oMainDataSource.uri).absoluteTo(sap.ui.require.toUrl(_sAppPath)).toString();
-                        console.log(sMockServerUrl);
                         console.log(oMainDataSource.host+sMockServerUrl);
                         if (!oMockServer) {
                             oMockServer = new MockServer({
@@ -36,8 +35,6 @@ sap.ui.define([
                         } else {
                             oMockServer.stop();
                         }
-
-                        console.log(MockServer);
 
                         MockServer.config({
                             autoRespond: true,

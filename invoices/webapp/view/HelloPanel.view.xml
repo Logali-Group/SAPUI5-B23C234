@@ -8,7 +8,8 @@
                 class="sapUiResponsiveMargin" 
                 expandable="true" 
                 expanded="true">
-                <Button text="{i18n>helloDialogBut}"
+                <Button id="helloDialogButton"
+                        text="{i18n>helloDialogBut}"
                         icon="sap-icon://action"
                         press="onOpenDialog"
                         class="sapUiSmallMarginEnd"/>

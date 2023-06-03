@@ -17,7 +17,7 @@
         },
         "dataSources": {
             "northwind": {
-                "host":"https://services.odata.org",
+                "host":"https://services.odata.org/",
                 "uri": "/v2/northwind/northwind.svc/",
                 "type": "OData",
                 "settings": {
@@ -114,18 +114,20 @@
                 {
                     "name": "RouteApp",
                     "pattern": ":?query:",
-                    "target": [
-                        "TargetApp"
-                    ]
+                    "target": "TargetOverview"
+                },
+                {
+                    "name":"Details",
+                    "pattern":"details/{invoicePath}",
+                    "target": "TargetDetails"
                 }
             ],
             "targets": {
-                "TargetApp": {
-                    "viewType": "XML",
-                    "transition": "slide",
-                    "clearControlAggregation": false,
-                    "viewId": "App",
-                    "viewName": "App"
+                "TargetOverview": {
+                    "viewName": "Overview"
+                },
+                "TargetDetails":{
+                    "viewName":"Details"
                 }
             }
         },

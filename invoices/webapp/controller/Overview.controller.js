@@ -1,0 +1,17 @@
+sap.ui.define([
+	"sap/ui/core/mvc/Controller"
+], function(
+	Controller
+) {
+	"use strict";
+
+	return Controller.extend("invoices.controller.Overview", {
+        onInit: function () {
+
+        },
+
+        onOpenDialogHeader: function () {
+            this.getOwnerComponent().onOpenHelloDialog();
+        }
+	});
+});

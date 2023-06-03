@@ -40,6 +40,19 @@ sap.ui.define([
                 let oList = this.getView().byId("invoiceList"),
                     oBinding = oList.getBinding("items");
                     oBinding.filter(aFilter);
+        },
+
+        onNavToDetails: function (oEvent) {
+
+            let oItem = oEvent.getSource(),
+                oBindingContext = oItem.getBindingContext("northwind"),
+                sPath = oBindingContext.getPath();
+
+            let oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+
+                oRouter.navTo("Details",{
+                    invoicePath: window.encodeURIComponent(sPath)
+                });
         }
 
     });
