@@ -1,9 +1,12 @@
 <mvc:View
 	controllerName="invoices.controller.Details"
     xmlns="sap.m"
+    xmlns:custom="invoices.control"
 	xmlns:mvc="sap.ui.core.mvc">
 
-    <Page title="{i18n>detailsPageTitle}">
+    <Page title="{i18n>detailsPageTitle}"
+            showNavButton="true"
+            navButtonPress="onNavToBack">
         <ObjectHeader title="{northwind>Quantity} x {northwind>ProductName}">
             <attributes>
                 <ObjectAttribute text="{northwind>ShipName}" />
@@ -16,6 +19,9 @@
                 <ObjectAttribute text="{northwind>CustomerName}" />
             </attributes>
         </ObjectHeader>
+        <custom:ProductRating id="rating"
+                                class="sapUiSmallMarginBeginEnd"
+                                change="onRatingChange"/>
     </Page>
 
 </mvc:View>
