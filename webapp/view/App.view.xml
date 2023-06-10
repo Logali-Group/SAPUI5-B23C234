@@ -1,0 +1,42 @@
+<mvc:View controllerName="list.controller.App"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core" 
+    displayBlock="true">
+
+
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                        <HBox>
+                            <Label text="{i18n>labelEmployee}"
+                                    class="sapUiSmallMarginEnd"/>
+                            <Input id="input"
+                                    maxLength="6"
+                                    width="12.5rem"
+                                    class="sapUiSmallMarginEnd"
+                                    liveChange="onValidate"/>
+                            <Label id="label"
+                                    text="{i18n>labelCountry}"
+                                    class="sapUiSmallMarginEnd"
+                                    visible="false"/>
+                            <Select id="select"
+                                    forceSelection="false"
+                                    visible="false">
+                                <items>
+                                    <core:Item key="US" text="{i18n>countryUS}"/>
+                                    <core:Item key="UK" text="{i18n>countryUK}"/>
+                                    <core:Item key="ES" text="{i18n>countryES}"/>
+                                </items>
+                            </Select>
+                        </HBox>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+
+
+</mvc:View>
