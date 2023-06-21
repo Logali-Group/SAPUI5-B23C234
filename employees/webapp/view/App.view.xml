@@ -3,32 +3,77 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:core="sap.ui.core">
 
-
     <Shell id="shell">
         <App id="app">
             <pages>
                 <Page id="page" title="{i18n>title}">
                     <content>
+
                             <HBox>
                                 <Label text="{i18n>labelEmployee}"
-                                        class="sapUiSmallMarginEnd"/>
+                                        class="sapUiSmallMargin"/>
                                 <Input id="inputEmployee"
                                         maxLength="6"
                                         width="12.5rem"
                                         class="sapUiSmallMarginEnd"
-                                        liveChange="onValidate"
+                                        value="{/EmployeeId}"
                                         valueLiveUpdate="true"/>
                                 <Label id="label"
                                         text="{i18n>labelCountry}"
-                                        class="sapUiSmallMarginEnd"
-                                        visible="false"/>
+                                        class="sapUiSmallMargin"/>
                                 <Select id="select"
+                                        class="sapUiSmallMarginEnd"
                                         forceSelection="false"
-                                        visible="false">
-                                    <core:Item key="US" text="{i18n>countryUS}"/>
-                                    <core:Item key="UK" text="{i18n>countryUK}"/>
-                                    <core:Item key="ES" text="{i18n>countryES}"/>
+                                        selectedKey="{/CountryKey}"
+                                        items="{/ListCountry}">
+                                    <core:Item key="{Key}" text="{Text}"/>
                                 </Select>
+                                <Button id="btnFilter"
+                                        text="{i18n>btnFilter}"
+                                        icon="sap-icon://search"
+                                        press="onFilter"
+                                        class="sapUiSmallMarginEnd"/>
+                                <Button id="btnClearFilter"
+                                        text="{i18n>btnClearFilter}"
+                                        icon="sap-icon://clear-filter"
+                                        press="onClear"
+                                        class="sapUiSmallMarginEnd"/>
+                            </HBox>
+
+                            <HBox>
+                                <Panel>
+                                    <Table id="tableEmployee"
+                                            items="{/Employees}">
+
+                                        <columns>
+                                            <Column>
+                                                <Label text="{i18n>tableId}"/>
+                                            </Column>
+                                            <Column>
+                                                <Label text="{i18n>tableName}"/>
+                                            </Column>
+                                            <Column>
+                                                <Label text="{i18n>tableCountry}"/>
+                                            </Column>
+                                            <Column>
+                                                <Label text="{i18n>tableCity}"/>
+                                            </Column>
+                                        </columns>
+
+                                        <items>
+                                            <ColumnListItem type="Active" 
+                                                            press="showPostalCode">
+                                                <cells>
+                                                    <Text text="{EmployeeID}"/>
+                                                    <Text text="{LastName}, {FirstName}"/>
+                                                    <Text text="{Country}"/>
+                                                    <Text text="{City}"/>
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+
+                                    </Table>
+                                </Panel>
                             </HBox>
                     </content>
                 </Page>
