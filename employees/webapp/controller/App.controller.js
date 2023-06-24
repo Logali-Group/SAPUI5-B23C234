@@ -16,7 +16,7 @@ sap.ui.define([
                 let oEmployees = new JSONModel(),
                     oCountries = new JSONModel(),
                     oConfig = new JSONModel(),
-                    oView =this.getView();
+                    oView = this.getView();
 
                 //load Employees.json
                 oEmployees.loadData("../model/Employees.json");
@@ -104,116 +104,6 @@ sap.ui.define([
                     oConfig.setProperty("/visibleCity", false );
                     oConfig.setProperty("/visibleBtnShowCity", true);
                     oConfig.setProperty("/visibleBtnHideCity", false);
-            },
-
-            showOrders: function (oEvent) {
-
-                let oTable = this.getView().byId("ordersTable");                //Control Dinamico
-                    oTable.destroyItems();                                      //Eliminar todos los Items, que fueron creados dinamicamente
-
-                let oItem = oEvent.getSource(),                                 //Obtengo el item que estoy seleccionando/presionando
-                    oBindingContext = oItem.getBindingContext("jsonEmployees"), //Obtengo el Binding (items) que estan en el modelo
-                    oOrders = oBindingContext.getProperty("Orders"); 
-                
-                //Crear los items dinamicamente
-                let aColumnListItems = [];
-
-                oOrders.forEach((oOrder)=>{
-                    aColumnListItems.push(new sap.m.ColumnListItem({
-                        cells:[
-                            new sap.m.Text({text: oOrder.OrderID}),
-                            new sap.m.Text({text: oOrder.Freight}),
-                            new sap.m.Text({text: oOrder.ShipAddress}),
-                        ]
-                    }));
-
-                    // let aItems = [];
-                    
-                    // let oColumn1 = new sap.m.Label({
-                    //     text: oOrder.OrderID
-                    // });
-                    // let oColumn2 = new sap.m.Label({
-                    //     text: oOrder.Freight
-                    // });
-                    // let oColumn3 = new sap.m.Label({
-                    //     text: oOrder.ShipAddress
-                    // });
-
-                    // aItems.push(oColumn1);
-                    // aItems.push(oColumn2);
-                    // aItems.push(oColumn3);
-
-                    // aColumnListItems.push(aItems);
-                });
-
-                let oNewTable = new sap.m.Table({
-                    width: "auto",
-                    columns:[
-                        new sap.m.Column({header: new sap.m.Label({text: "{i18n>orderId}"})}),
-                        new sap.m.Column({header: new sap.m.Label({text: "{i18n>freight}"})}),
-                        new sap.m.Column({header: new sap.m.Label({text: "{i18n>shipAddress}"})})
-                    ],
-                    items: aColumnListItems
-                }).addStyleClass("sapUiSmallMargin");
-
-                oTable.addItem(oNewTable);
-            },
-
-            showOrders2: function (oEvent) {
-
-                let oHBox = this.byId("ordersTable");
-                    oHBox.destroyItems();
-
-                let oItem = oEvent.getSource(),
-                    oBindingContext = oItem.getBindingContext("jsonEmployees");
-
-                let oNewTable = new sap.m.Table();
-                    oNewTable.setWidth("auto");
-                    oNewTable.addStyleClass("sapUiSmallMargin");
-
-                let oColumnOrderID = new sap.m.Column(),
-                    oLabelOrderId = new sap.m.Label();
-                    oLabelOrderId.bindProperty("text", "i18n>orderId");
-                    oColumnOrderID.setHeader(oLabelOrderId);
-                    oNewTable.addColumn(oColumnOrderID);
-
-                let oColumnFreight = new sap.m.Column(),
-                    oLabelFreight = new sap.m.Label();
-                    oLabelFreight.bindProperty("text", "i18n>freight");
-                    oColumnFreight.setHeader(oLabelFreight);
-                    oNewTable.addColumn(oColumnFreight);
-
-                let oColumnShipAddress = new sap.m.Column(),
-                    oLabelShipAddress = new sap.m.Label();
-                    oLabelShipAddress.bindProperty("text", "i18n>shipAddress");
-                    oColumnShipAddress.setHeader(oLabelShipAddress);
-                    oNewTable.addColumn(oColumnShipAddress);
-
-                let oColumnListItem = new sap.m.ColumnListItem();
-                
-                let oCellOrderId = new sap.m.Label();
-                    oCellOrderId.bindProperty("text", "jsonEmployees>OrderID");
-                    oColumnListItem.addCell(oCellOrderId);
-
-                let oCellFreight= new sap.m.Label();
-                    oCellFreight.bindProperty("text", "jsonEmployees>Freight");
-                    oColumnListItem.addCell(oCellFreight);
-
-                let oCellShipAddress= new sap.m.Label();
-                    oCellShipAddress.bindProperty("text", "jsonEmployees>ShipAddress");
-                    oColumnListItem.addCell(oCellShipAddress);
-
-                let oBindingInfo = {
-                    model: "jsonEmployees",
-                    path:'Orders',
-                    template: oColumnListItem
-                };
-
-                oNewTable.bindAggregation("items", oBindingInfo);
-                //"jsonEmployees>/Orders"
-                oNewTable.bindElement("jsonEmployees>"+oBindingContext.getPath());
-
-                oHBox.addItem(oNewTable);
             }
         });
     });

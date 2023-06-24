@@ -55,6 +55,7 @@
                                             visible="{jsonConfig>/visibleBtnHideCity}"
                                             press="onHideCity"/>
 
+                                    
                                     <Table id="tableEmployee"
                                             items="{jsonEmployees>/Employees}">
 
@@ -90,7 +91,6 @@
 
                                     </Table>
 
-                                    <HBox id="ordersTable"/>
                                 </Panel>
                             </HBox>
                     </content>
