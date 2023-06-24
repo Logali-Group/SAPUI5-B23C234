@@ -42,22 +42,28 @@
 
                             <HBox>
                                 <Panel>
+
                                     <Button id="btnShowCity"
                                             class="sapUiSmallMarginEnd"
                                             text="{i18n>showCity}"
                                             visible="{jsonConfig>/visibleBtnShowCity}"
                                             press="onShowCity"/>
+
                                     <Button id="btnHideCity"
                                             class="sapUiSmallMarginEnd"
                                             text="{i18n>hideCity}"
                                             visible="{jsonConfig>/visibleBtnHideCity}"
                                             press="onHideCity"/>
+
                                     <Table id="tableEmployee"
                                             items="{jsonEmployees>/Employees}">
 
                                         <columns>
                                             <Column visible="{jsonConfig>/visibleID}">
-                                                <Label text="{i18n>tableId}"/>
+                                            <header>
+                                            <Label text="{i18n>tableId}"/>
+                                            </header>
+                                                
                                             </Column>
                                             <Column visible="{jsonConfig>/visibleName}">
                                                 <Label text="{i18n>tableName}"/>
@@ -72,7 +78,7 @@
 
                                         <items>
                                             <ColumnListItem type="Active" 
-                                                            press="showPostalCode">
+                                                            press="showOrders2">
                                                 <cells>
                                                     <Text text="{jsonEmployees>EmployeeID}"/>
                                                     <Text text="{jsonEmployees>LastName}, {jsonEmployees>FirstName}"/>
@@ -83,6 +89,8 @@
                                         </items>
 
                                     </Table>
+
+                                    <HBox id="ordersTable"/>
                                 </Panel>
                             </HBox>
                     </content>
