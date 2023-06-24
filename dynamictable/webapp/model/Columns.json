@@ -1,0 +1,69 @@
+{
+    "Products":[
+        {
+            "i18n":"Product ID",
+            "Name":"ProductID",
+            "Control":"ObjectIdentifier"
+        },
+        {
+            "i18n":"Product Name",
+            "Name":"ProductName",
+            "Control":"Text"
+        },        
+        {
+            "i18n":"Quantity Per Unit",
+            "Name":"QuantityPerUnit",
+            "Control":"Text"
+        },        
+        {
+            "i18n":"Unit Price",
+            "Name":"UnitPrice",
+            "Control":"ObjectNumber",
+            "Unit":"USD"
+        },
+        {
+            "i18n":"Units In Stock",
+            "Name":"UnitsInStock",
+            "Control":"ObjectNumber",
+            "Unit":"Unit"
+        },
+        {
+            "i18n":"Units On Order",
+            "Name":"UnitsOnOrder",
+            "Control":"ObjectNumber",
+            "Unit":"Unit"
+        }
+    ],
+    "Invoices":[
+        {
+            "i18n":"Ship Name",
+            "Name":"ShipName",
+            "Control":"Text"
+        },
+        {
+            "i18n":"Ship Address",
+            "Name":"ShipAddress",
+            "Control":"Text"
+        },
+        {
+            "i18n":"Ship City",
+            "Name":"ShipCity",
+            "Control":"Text"
+        },
+        {
+            "i18n":"Ship Postal Code",
+            "Name":"ShipPostalCode",
+            "Control":"Text"
+        },
+        {
+            "i18n":"Ship Country",
+            "Name":"ShipCountry",
+            "Control":"Text"
+        },
+        {
+            "i18n":"Customer Name",
+            "Name":"CustomerName",
+            "Control":"Text"
+        }
+    ]
+}

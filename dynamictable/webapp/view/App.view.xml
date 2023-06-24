@@ -1,0 +1,48 @@
+<mvc:View controllerName="dynamictable.controller.App"
+            xmlns="sap.m"
+            xmlns:mvc="sap.ui.core.mvc" 
+            displayBlock="true">
+
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page">
+
+                    <customHeader>
+                        <OverflowToolbar>
+                            <Title text="{i18n>dynamicTable}" 
+                                    wrapping="true"/>
+                            <ToolbarSpacer/>
+                            <Button
+                                    text="{i18n>products}"
+                                    tooltip="{i18n>products}"
+                                    class="sapUiSmallMarginEnd"
+                                    type="Emphasized"
+                                    press="onCreateTable('Products')"
+                                    width="6rem"/>
+                            <Button
+                                    text="{i18n>invoices}"
+                                    tooltip="{i18n>invoices}"
+                                    class="sapUiSmallMarginEnd"
+                                    type="Emphasized"
+                                    press="onCreateTable('Invoices')"
+                                    width="6rem"/>
+
+                            <Button
+                                    text="{i18n>employees}"
+                                    tooltip="{i18n>employees}"
+                                    class="sapUiSmallMarginEnd"
+                                    type="Emphasized"
+                                    width="6rem"/>
+                        </OverflowToolbar>
+                    </customHeader>
+
+                    <content>
+                        <FlexBox id="flexbox" class="sapUiSmallMargin"/>
+                    </content>
+
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
