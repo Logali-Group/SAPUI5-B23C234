@@ -56,7 +56,7 @@
                             <Text text="{jsonEmployees>LastName}, {jsonEmployees>FirstName}"/>
                             <Text text="{jsonEmployees>Country}"/>
                             <Text text="{jsonEmployees>City}"/>
-                            <core:Icon src="show" press="showOrders3"/>
+                            <core:Icon src="sap-icon://show" press="showOrders3"/>
                         </cells>
                     </ColumnListItem>
                 </items>

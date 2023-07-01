@@ -19,12 +19,12 @@
                 justifyContent="SpaceBetween">
             <items>
                 <VBox>
-                    <Text text="{i18n>employeeId}" class="boldText sapUiTinyMarginEnd"/>
-                    <Text text="{jsonEmployees>EmployeeID}"/>
+                    <Text text="{i18n>employeeId}: " class="boldText sapUiSmallMarginBegin"/>
+                    <Text text="{jsonEmployees>EmployeeID}" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
                 </VBox>
                 <VBox>
-                    <Text text="{i18n>titleEmployee}" class="boldText sapUiTinyMarginEnd"/>
-                    <Text text="{jsonEmployees>Title}"/>
+                    <Text text="{i18n>titleEmployee}: " class="boldText sapUiSmallMarginBegin"/>
+                    <Text text="{jsonEmployees>Title}" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
                 </VBox>
             </items>
         </FlexBox>
@@ -33,24 +33,33 @@
 
             <items> 
                     <HBox>
-                        <Text text="{i18n>countryCode}: " class="boldText sapUiTinyMarginEnd"/>
-                        <Text text="{jsonEmployees>Country}" width="100%"/>
+                        <Text text="{i18n>countryCode}: " 
+                                class="boldText sapUiSmallMarginBegin"/>
+                        <Text text="{jsonEmployees>Country}"  
+                                class="sapUiSmallMarginBegin sapUiSmallMarginEnd" 
+                                width="100%"/>
                         <layoutData>
                             <FlexItemData growFactor="3" />
                         </layoutData>
                     </HBox>
 
                     <HBox>
-                        <Text text="{i18n>city}: " class="boldText sapUiTinyMarginEnd"/>
-                        <Text text="{jsonEmployees>City}" width="100%"/>
+                        <Text text="{i18n>city}: " 
+                                class="boldText sapUiSmallMarginBegin"/>
+                        <Text text="{jsonEmployees>City}" 
+                                 class="sapUiSmallMarginBegin sapUiSmallMarginEnd"    
+                                width="100%"/>
                         <layoutData>
                             <FlexItemData growFactor="2" />
                         </layoutData>
                     </HBox>
 
                     <HBox alignItems="Start">
-                        <Text text="{i18n>postalCode}: " class="boldText sapUiTinyMarginEnd"/>
-                        <Text text="{jsonEmployees>PostalCode}" width="100%"/>
+                        <Text text="{i18n>postalCode}: " 
+                                class="boldText sapUiSmallMarginBegin"/>
+                        <Text text="{jsonEmployees>PostalCode}" 
+                                 class="sapUiSmallMarginBegin sapUiSmallMarginEnd"
+                                width="100%"/>
                         <layoutData>
                             <FlexItemData growFactor="1" />
                         </layoutData>
