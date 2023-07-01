@@ -1,0 +1,48 @@
+<mvc:View controllerName="employees.controller.MasterEmployee"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core">
+
+
+    <Page id="page" title="{i18n>title}">
+        <content>
+
+                <HBox>
+                    <Label text="{i18n>labelEmployee}"
+                            class="sapUiSmallMargin"/>
+                    <Input id="inputEmployee"
+                            width="12.5rem"
+                            class="sapUiSmallMarginEnd"
+                            liveChange="onFilter"
+                            value="{jsonCountries>/EmployeeId}"
+                            valueLiveUpdate="true"/>
+                    <Label id="label"
+                            text="{i18n>labelCountry}"
+                            class="sapUiSmallMargin"/>
+                    <Select id="select"
+                            class="sapUiSmallMarginEnd"
+                            forceSelection="false"
+                            selectedKey="{jsonCountries>/CountryKey}"
+                            items="{jsonCountries>/ListCountry}">
+                        <core:Item key="{jsonCountries>Key}" text="{jsonCountries>Text}"/>
+                    </Select>
+                    <Button id="btnFilter"
+                            text="{i18n>btnFilter}"
+                            icon="sap-icon://search"
+                            press="onFilter"
+                            class="sapUiSmallMarginEnd"/>
+                    <Button id="btnClearFilter"
+                            text="{i18n>btnClearFilter}"
+                            icon="sap-icon://clear-filter"
+                            press="onClear"
+                            class="sapUiSmallMarginEnd"/>
+                </HBox>
+
+                <HBox>
+                    <core:Fragment fragmentName="employees.fragment.TableEmployee"
+                                    type="XML"/>
+                </HBox>
+        </content>
+    </Page>
+
+</mvc:View>

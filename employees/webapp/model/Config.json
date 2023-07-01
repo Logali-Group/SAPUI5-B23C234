@@ -1,0 +1,8 @@
+{
+    "visibleID": true,
+    "visibleName": true,
+    "visibleCountry": true,
+    "visibleCity":false,
+    "visibleBtnShowCity":true,
+    "visibleBtnHideCity":false
+}
