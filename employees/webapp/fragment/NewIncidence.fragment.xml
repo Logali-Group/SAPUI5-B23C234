@@ -1,0 +1,58 @@
+<core:FragmentDefinition
+            xmlns="sap.m"
+            xmlns:core="sap.ui.core">
+
+        <Panel>
+            
+            <headerToolbar>
+                <Toolbar>
+                    <core:Icon src="{=  ${incidenceModel>status} === '0'? 'sap-icon://accept'  :
+                                        ${incidenceModel>status} === '1'? 'sap-icon://alert'   :
+                                        ${incidenceModel>status} === '2'? 'sap-icon://decline' : ''
+                                    }"/>
+                    <Title text="{i18n>incidence} {incidenceModel>index} 
+                                {
+                                    path:'incidenceModel>date',
+                                    formatter: '.callFormater.dateFormat' 
+                                }
+                    "/>
+                    <ToolbarSpacer/>
+                    <core:Icon src="delete"
+                                press="onDeleteIncidence"/>
+                </Toolbar>
+            </headerToolbar>
+
+            <content>
+                
+                <HBox>
+
+                    <VBox class="sapUiSmallMarginEnd">
+                        <Text text="{i18n>incidenceDate}"/>
+                        <DatePicker dateValue="{incidenceModel>date}"/>
+                    </VBox>
+
+
+                    <VBox class="sapUiSmallMarginEnd"
+                            visible="{= ${incidenceModel>date} !== '' &amp;&amp; ${incidenceModel>date} !== undefined }">
+                        <Text text="{i18n>incidenceReason}"/>
+                        <Input/>
+                    </VBox>
+
+                    <VBox class="sapUiSmallMarginEnd"
+                            visible="{= ${incidenceModel>date} !== '' &amp;&amp; ${incidenceModel>date} !== undefined}">
+                        <Text text="{i18n>incidenceType}" />
+                        <Select selectedKey="{incidenceModel>status}" 
+                                forceSelection="false">
+                            <core:Item key="0" text="{i18n>incidenceCorrect}"/>
+                            <core:Item key="1" text="{i18n>incidencePending}"/>
+                            <core:Item key="2" text="{i18n>incidenceError}"/>
+                        </Select>
+                    </VBox>
+
+                </HBox>
+
+            </content>
+
+        </Panel>
+
+</core:FragmentDefinition>

@@ -37,7 +37,11 @@ sap.ui.define([
         showEmployeeDetails: function (sChanne, sEventName, sPath) {
             let oDetailsView = this.getView().byId("detailsEmployeeView");
                 oDetailsView.bindElement("jsonEmployees>"+sPath);
-            this.getView().getModel("jsonLayout").setProperty("/ActiveKey","TwoColumnsMidExpanded")
+            this.getView().getModel("jsonLayout").setProperty("/ActiveKey","TwoColumnsMidExpanded");
+
+            let oIncidence = new JSONModel([]);
+            oDetailsView.setModel(oIncidence, "incidenceModel");
+            oDetailsView.byId("tableIncidence").removeAllContent();
         }
 
     });

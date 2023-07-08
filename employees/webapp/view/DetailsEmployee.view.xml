@@ -5,68 +5,89 @@
 
     <Page title="{i18n>employeeDetails}">
 
-        <FlexBox height="4.1rem" 
-                    alignItems="Center"
-                    justifyContent="Center">
-            <items>
-                <Text text="{jsonEmployees>LastName}, {jsonEmployees>FirstName}"
-                        class="boldText"/>
-            </items>
-        </FlexBox>
+        <Panel>
 
-        <FlexBox height="4.1rem"
-                alignItems="Start"
-                justifyContent="SpaceBetween">
-            <items>
-                <VBox>
-                    <Text text="{i18n>employeeId}: " class="boldText sapUiSmallMarginBegin"/>
-                    <Text text="{jsonEmployees>EmployeeID}" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
-                </VBox>
-                <VBox>
-                    <Text text="{i18n>titleEmployee}: " class="boldText sapUiSmallMarginBegin"/>
-                    <Text text="{jsonEmployees>Title}" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
-                </VBox>
-            </items>
-        </FlexBox>
+            <FlexBox height="4.1rem" 
+                        alignItems="Center"
+                        justifyContent="Center">
+                <items>
+                    <Text text="{jsonEmployees>LastName}, {jsonEmployees>FirstName}"
+                            class="boldText"/>
+                </items>
+            </FlexBox>
 
-        <FlexBox alignItems="Start" justifyContent="SpaceBetween">
+            <FlexBox height="4.1rem"
+                    alignItems="Start"
+                    justifyContent="SpaceBetween">
+                <items>
+                    <VBox>
+                        <Text text="{i18n>employeeId}: " class="boldText sapUiSmallMarginBegin"/>
+                        <Text text="{jsonEmployees>EmployeeID}" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+                    </VBox>
+                    <VBox>
+                        <Text text="{i18n>titleEmployee}: " class="boldText sapUiSmallMarginBegin"/>
+                        <Text text="{jsonEmployees>Title}" class="sapUiSmallMarginBegin sapUiSmallMarginEnd"/>
+                    </VBox>
+                </items>
+            </FlexBox>
 
-            <items> 
-                    <HBox>
-                        <Text text="{i18n>countryCode}: " 
-                                class="boldText sapUiSmallMarginBegin"/>
-                        <Text text="{jsonEmployees>Country}"  
-                                class="sapUiSmallMarginBegin sapUiSmallMarginEnd" 
-                                width="100%"/>
-                        <layoutData>
-                            <FlexItemData growFactor="3" />
-                        </layoutData>
-                    </HBox>
+            <FlexBox alignItems="Start" justifyContent="SpaceBetween">
 
-                    <HBox>
-                        <Text text="{i18n>city}: " 
-                                class="boldText sapUiSmallMarginBegin"/>
-                        <Text text="{jsonEmployees>City}" 
-                                 class="sapUiSmallMarginBegin sapUiSmallMarginEnd"    
-                                width="100%"/>
-                        <layoutData>
-                            <FlexItemData growFactor="2" />
-                        </layoutData>
-                    </HBox>
+                <items> 
+                        <HBox>
+                            <Text text="{i18n>countryCode}: " 
+                                    class="boldText sapUiSmallMarginBegin"/>
+                            <Text text="{jsonEmployees>Country}"  
+                                    class="sapUiSmallMarginBegin sapUiSmallMarginEnd" 
+                                    width="100%"/>
+                            <layoutData>
+                                <FlexItemData growFactor="3" />
+                            </layoutData>
+                        </HBox>
 
-                    <HBox alignItems="Start">
-                        <Text text="{i18n>postalCode}: " 
-                                class="boldText sapUiSmallMarginBegin"/>
-                        <Text text="{jsonEmployees>PostalCode}" 
-                                 class="sapUiSmallMarginBegin sapUiSmallMarginEnd"
-                                width="100%"/>
-                        <layoutData>
-                            <FlexItemData growFactor="1" />
-                        </layoutData>
-                    </HBox>
-            </items>
+                        <HBox>
+                            <Text text="{i18n>city}: " 
+                                    class="boldText sapUiSmallMarginBegin"/>
+                            <Text text="{jsonEmployees>City}" 
+                                    class="sapUiSmallMarginBegin sapUiSmallMarginEnd"    
+                                    width="100%"/>
+                            <layoutData>
+                                <FlexItemData growFactor="2" />
+                            </layoutData>
+                        </HBox>
 
-        </FlexBox>
+                        <HBox alignItems="Start">
+                            <Text text="{i18n>postalCode}: " 
+                                    class="boldText sapUiSmallMarginBegin"/>
+                            <Text text="{jsonEmployees>PostalCode}" 
+                                    class="sapUiSmallMarginBegin sapUiSmallMarginEnd"
+                                    width="100%"/>
+                            <layoutData>
+                                <FlexItemData growFactor="1" />
+                            </layoutData>
+                        </HBox>
+                </items>
+
+            </FlexBox>
+            
+        </Panel>
+
+        <Panel class="sapUiSizeCompact"
+                backgroundDesign="Transparent">
+            <headerToolbar>
+                <Toolbar>
+                    <Title text="{i18n>incidence} {= ${jsonEmployees>Country} !== 'US'? ${i18n>europe} : ${i18n>US} }"/>
+                    <ToolbarSpacer/>
+                    <Button text="{i18n>createIncidence}"
+                            press="onCreateIncidence"/>
+                </Toolbar>
+            </headerToolbar>
+        </Panel>
+
+        <Panel id="tableIncidence"
+                class="sapUiNoContentPadding"
+                backgroundDesign="Transparent"/>
+
     </Page>
 
 </mvc:View>
