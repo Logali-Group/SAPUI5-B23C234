@@ -6,7 +6,7 @@
                     contentWidth="25rem">
         
             <content>
-                    <Table items="{jsonEmployees>Orders}"
+                    <Table items="{odataNorthwind>Orders}"
                             width="auto">
                             
                         <columns>
@@ -25,9 +25,9 @@
                         <items>
                             <ColumnListItem>
                                 <cells>
-                                    <Text text="{jsonEmployees>OrderID}"/>
-                                    <Text text="{jsonEmployees>Freight}"/>
-                                    <Text text="{jsonEmployees>ShipAddress}"/>
+                                    <Text text="{odataNorthwind>OrderID}"/>
+                                    <Text text="{odataNorthwind>Freight}"/>
+                                    <Text text="{odataNorthwind>ShipAddress}"/>
                                 </cells>
                             </ColumnListItem>
                         </items>

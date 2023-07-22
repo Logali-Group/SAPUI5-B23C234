@@ -17,7 +17,7 @@
                     press="onHideCity"/>
 
             <Table id="tableEmployee"
-                    items="{jsonEmployees>/Employees}">
+                    items="{odataNorthwind>/Employees}">
 
                 <columns>
                     <Column minScreenWidth="Small"
@@ -52,10 +52,10 @@
                     <ColumnListItem type="Navigation" 
                                     press="showDetails">
                         <cells>
-                            <Text text="{jsonEmployees>EmployeeID}"/>
-                            <Text text="{jsonEmployees>LastName}, {jsonEmployees>FirstName}"/>
-                            <Text text="{jsonEmployees>Country}"/>
-                            <Text text="{jsonEmployees>City}"/>
+                            <Text text="{odataNorthwind>EmployeeID}"/>
+                            <Text text="{odataNorthwind>LastName}, {odataNorthwind>FirstName}"/>
+                            <Text text="{odataNorthwind>Country}"/>
+                            <Text text="{odataNorthwind>City}"/>
                             <core:Icon src="sap-icon://show" press="showOrders3"/>
                         </cells>
                     </ColumnListItem>

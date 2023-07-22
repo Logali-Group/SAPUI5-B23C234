@@ -69,7 +69,7 @@ sap.ui.define([
 
             showPostalCode: function (oEvent) {
                 let oItem = oEvent.getSource(),
-                    oBindingContext = oItem.getBindingContext("jsonEmployees"),
+                    oBindingContext = oItem.getBindingContext("odataNorthwind"),
                     sPostal = oBindingContext.getProperty("PostalCode");
                 console.log(oItem);
                 console.log(oBindingContext);
@@ -97,7 +97,7 @@ sap.ui.define([
                     oTable.destroyItems();                                      //Eliminar todos los Items, que fueron creados dinamicamente
 
                 let oItem = oEvent.getSource(),                                 //Obtengo el item que estoy seleccionando/presionando
-                    oBindingContext = oItem.getBindingContext("jsonEmployees"), //Obtengo el Binding (items) que estan en el modelo
+                    oBindingContext = oItem.getBindingContext("odataNorthwind"), //Obtengo el Binding (items) que estan en el modelo
                     oOrders = oBindingContext.getProperty("Orders"); 
                 
                 //Crear los items dinamicamente
@@ -133,7 +133,7 @@ sap.ui.define([
                     //oHBox.destroyItems();
 
                 let oItem = oEvent.getSource(),
-                    oBindingContext = oItem.getBindingContext("jsonEmployees");
+                    oBindingContext = oItem.getBindingContext("odataNorthwind");
 
                 let oNewTable = new sap.m.Table();
                     oNewTable.setWidth("auto");
@@ -160,33 +160,33 @@ sap.ui.define([
                 let oColumnListItem = new sap.m.ColumnListItem();
                 
                 let oCellOrderId = new sap.m.Label();
-                    oCellOrderId.bindProperty("text", "jsonEmployees>OrderID");
+                    oCellOrderId.bindProperty("text", "odataNorthwind>OrderID");
                     oColumnListItem.addCell(oCellOrderId);
 
                 let oCellFreight= new sap.m.Label();
-                    oCellFreight.bindProperty("text", "jsonEmployees>Freight");
+                    oCellFreight.bindProperty("text", "odataNorthwind>Freight");
                     oColumnListItem.addCell(oCellFreight);
 
                 let oCellShipAddress= new sap.m.Label();
-                    oCellShipAddress.bindProperty("text", "jsonEmployees>ShipAddress");
+                    oCellShipAddress.bindProperty("text", "odataNorthwind>ShipAddress");
                     oColumnListItem.addCell(oCellShipAddress);
 
                 let oBindingInfo = {
-                    model: "jsonEmployees",
+                    model: "odataNorthwind",
                     path:'Orders',
                     template: oColumnListItem
                 };
 
                 oNewTable.bindAggregation("items", oBindingInfo);
-                //"jsonEmployees>/Orders"
-                oNewTable.bindElement("jsonEmployees>"+oBindingContext.getPath());
+                //"odataNorthwind>/Orders"
+                oNewTable.bindElement("odataNorthwind>"+oBindingContext.getPath());
 
                 oHBox.addItem(oNewTable);
             },
 
             showOrders3: function (oEvent) {
                 let oIconPressed = oEvent.getSource(),
-                    oBindingContext = oIconPressed.getBindingContext("jsonEmployees"),
+                    oBindingContext = oIconPressed.getBindingContext("odataNorthwind"),
                     sPath = oBindingContext.getPath(),
                     oView = this.getView();
                 
@@ -203,7 +203,7 @@ sap.ui.define([
                     
                     //  /Employees/0/
                     this._pDialogOrders.then(function (oDialog) {
-                        oDialog.bindElement("jsonEmployees>"+sPath);
+                        oDialog.bindElement("odataNorthwind>"+sPath);
                         oDialog.open();
                     });
             },
@@ -215,7 +215,7 @@ sap.ui.define([
             },
 
             showDetails: function (oEvent) {
-                let sPath = oEvent.getSource().getBindingContext("jsonEmployees").getPath();
+                let sPath = oEvent.getSource().getBindingContext("odataNorthwind").getPath();
                 // this._oEventBus.publish("sChannelID, sEventNameID, oObject");
                 this._oEventBus.publish("flexible","showDetails", sPath);
             }

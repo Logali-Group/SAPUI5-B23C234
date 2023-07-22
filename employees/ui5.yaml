@@ -19,6 +19,10 @@ server:
           - path: /v2
             url: https://services.odata.org
             destination: Northwind
+          - path: /sap
+            url: http://erp13.sap4practice.com:9037
+            client: '001'
+            destination: ERP13
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:

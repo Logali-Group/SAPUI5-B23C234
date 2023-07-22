@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
-
 specVersion: "2.6"
 metadata:
   name: employees
@@ -9,7 +7,7 @@ server:
     - name: fiori-tools-proxy
       afterMiddleware: compression
       configuration:
-        ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        ignoreCertError: false
         ui5:
           path:
             - /resources
@@ -19,6 +17,10 @@ server:
           - path: /v2
             url: https://services.odata.org
             destination: Northwind
+          - path: /sap
+            url: http://erp13.sap4practice.com:9037
+            client: "001"
+            destination: Logali
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -35,3 +37,12 @@ server:
             mockdataPath: ./webapp/localService/data
             generateMockData: true
         annotations: []
+        service:
+          - urlPath: /v2/northwind/northwind.svc
+            generateMockData: true
+            metadataXmlPath: ./webapp/localService/metadata.xml
+            mockdataRootPath: ./webapp/localService/data
+          - urlPath: /sap/opu/odata/sap/YSAPUI5_SRV_01/
+            metadataXmlPath: ./webapp/localService/YSAPUI5_SRV_011/metadata.xml
+            mockdataRootPath: ./webapp/localService/YSAPUI5_SRV_011/mockdata
+            generateMockData: true
